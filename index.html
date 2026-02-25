@@ -25,30 +25,10 @@ h1 {
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 20px;
-    max-width: 300px;
+    padding: 25px;
     margin: 20px auto;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-a {
-    text-decoration: none;
-}
-
-.button {
-    display: inline-block;
-    background: #ff7b00;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    margin-top: 10px;
-}
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px;
     border-radius: 20px;
+    max-width: 320px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     cursor: pointer;
     transition: 0.3s;
@@ -61,18 +41,17 @@ a {
 .button {
     background: #ff4081;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 22px;
     border-radius: 30px;
     display: inline-block;
     margin-top: 15px;
+    text-decoration: none;
 }
+
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
@@ -84,9 +63,14 @@ a {
     border-radius: 20px;
     text-align: center;
     max-width: 400px;
+    animation: aparecer 0.3s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
 }
 </style>
-
 </head>
 
 <body>
@@ -95,58 +79,99 @@ a {
 
 <div class="container">
 
+<!-- SAFARI -->
 <div class="card" onclick="abrirModal('safari')">
-    <h2>🦁 Safari</h2>
+    <h2>🦁 Safari Aventura</h2>
 </div>
 
 <div id="safari" class="modal">
     <div class="modal-content">
-        <h3>Uma aventura selvagem começa aqui!</h3>
-        <p>Surpreenda seus convidados com um convite cheio de diversão e emoção 🐾</p>
-        <a href="modelos/safari-simples/">
-            <div class="button">Ver Modelo Agora</div>
-        </a>
+        <h3>🌿 Uma festa selvagem cheia de emoção!</h3>
+        <p>Transforme o aniversário em uma expedição inesquecível 🐾</p>
+        <a href="modelos/safari-simples/" class="button">Ver Modelo</a>
     </div>
 </div>
 
-<div class="card">
-    <h2>👑 Princesa Simples</h2>
-    <a href="modelos/princesa-simples/">
-        <div class="button">Ver Modelo</div>
-    </a>
+<!-- PRINCESA -->
+<div class="card" onclick="abrirModal('princesa')">
+    <h2>👑 Princesa Encantada</h2>
 </div>
-    <div class="card">
-    <h2>🦸 Heróis Simples</h2>
-    <a href="modelos/herois-simples/">
-        <div class="button">Ver Modelo</div>
-    </a>
+
+<div id="princesa" class="modal">
+    <div class="modal-content">
+        <h3>✨ Um conto de fadas começa aqui!</h3>
+        <p>Encante todos os convidados com delicadeza e magia 💖</p>
+        <a href="modelos/princesa-simples/" class="button">Ver Modelo</a>
+    </div>
 </div>
-    <div class="card">
+
+<!-- HERÓIS -->
+<div class="card" onclick="abrirModal('herois')">
+    <h2>🦸 Heróis Poderosos</h2>
+</div>
+
+<div id="herois" class="modal">
+    <div class="modal-content">
+        <h3>💥 Uma festa cheia de ação!</h3>
+        <p>Prepare-se para salvar o aniversário com muita aventura!</p>
+        <a href="modelos/herois-simples/" class="button">Ver Modelo</a>
+    </div>
+</div>
+
+<!-- MINNIE -->
+<div class="card" onclick="abrirModal('minnie')">
     <h2>🎀 Minnie Rosa</h2>
-    <a href="modelos/minnie-rosa/">
-        <div class="button">Ver Modelo</div>
-    </a>
 </div>
-    <div class="card">
-    <h2>⚽ Futebol Simples</h2>
-    <a href="modelos/futebol-simples/">
-        <div class="button">Ver Modelo</div>
-    </a>
+
+<div id="minnie" class="modal">
+    <div class="modal-content">
+        <h3>🎉 Uma festa delicada e encantadora!</h3>
+        <p>Perfeita para um aniversário cheio de amor 💕</p>
+        <a href="modelos/minnie-rosa/" class="button">Ver Modelo</a>
+    </div>
 </div>
-    <div class="card">
+
+<!-- FUTEBOL -->
+<div class="card" onclick="abrirModal('futebol')">
+    <h2>⚽ Futebol Campeão</h2>
+</div>
+
+<div id="futebol" class="modal">
+    <div class="modal-content">
+        <h3>🏆 Essa festa vai ser um golaço!</h3>
+        <p>Monte o time e venha comemorar como um campeão!</p>
+        <a href="modelos/futebol-simples/" class="button">Ver Modelo</a>
+    </div>
+</div>
+
+<!-- DINO -->
+<div class="card" onclick="abrirModal('dino')">
     <h2>🦖 Dinossauro Aventura</h2>
-    <a href="modelos/dinossauro-aventura/">
-        <div class="button">Ver Modelo</div>
-    </a>
 </div>
-    <div class="card">
+
+<div id="dino" class="modal">
+    <div class="modal-content">
+        <h3>🌋 Uma aventura jurássica inesquecível!</h3>
+        <p>Prepare-se para rugir de alegria 🦕</p>
+        <a href="modelos/dinossauro-aventura/" class="button">Ver Modelo</a>
+    </div>
+</div>
+
+<!-- HERÓI ARANHA -->
+<div class="card" onclick="abrirModal('aranha')">
     <h2>🕷️ Herói Aranha</h2>
-    <a href="modelos/heroi-aranha/">
-        <div class="button">Ver Modelo</div>
-    </a>
+</div>
+
+<div id="aranha" class="modal">
+    <div class="modal-content">
+        <h3>🕸️ Um herói vai salvar essa festa!</h3>
+        <p>Prepare sua fantasia e venha viver essa aventura!</p>
+        <a href="modelos/heroi-aranha/" class="button">Ver Modelo</a>
+    </div>
 </div>
 
 </div>
+
 <script>
 function abrirModal(id) {
     document.getElementById(id).style.display = "flex";
@@ -158,5 +183,6 @@ window.onclick = function(event) {
     }
 }
 </script>
+
 </body>
 </html>
