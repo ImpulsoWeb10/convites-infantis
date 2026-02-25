@@ -44,6 +44,49 @@ a {
     border-radius: 30px;
     margin-top: 10px;
 }
+    <style>
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.button {
+    background: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 15px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+}
+</style>
 </style>
 </head>
 
@@ -53,11 +96,18 @@ a {
 
 <div class="container">
 
-<div class="card">
-    <h2>🦁 Safari Simples</h2>
-    <a href="modelos/safari-simples/">
-        <div class="button">Ver Modelo</div>
-    </a>
+<div class="card" onclick="abrirModal('safari')">
+    <h2>🦁 Safari</h2>
+</div>
+
+<div id="safari" class="modal">
+    <div class="modal-content">
+        <h3>Uma aventura selvagem começa aqui!</h3>
+        <p>Surpreenda seus convidados com um convite cheio de diversão e emoção 🐾</p>
+        <a href="modelos/safari/">
+            <div class="button">Ver Modelo Agora</div>
+        </a>
+    </div>
 </div>
 
 <div class="card">
@@ -98,6 +148,16 @@ a {
 </div>
 
 </div>
+<script>
+function abrirModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
 
+window.onclick = function(event) {
+    if (event.target.classList.contains("modal")) {
+        event.target.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
